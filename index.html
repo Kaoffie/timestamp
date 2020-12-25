@@ -8,14 +8,14 @@
       html, body {
         padding:1em;
         margin:auto;
-        max-width:60em;
+        max-width:80%;
         background:#252831;
       }
       body {
         font-family: 'Noto Sans TC',sans-serif;
         color: #FFF;
         line-height: 1.4;
-        text-align: justify;
+        text-align: center;
       }
     </style>
     <script>
@@ -31,22 +31,22 @@
     <h1>Time Converter | 時間換算</h1>
     <hr>
     <p>
-      <label for="time"><b>Pick a date and time | 請選擇日期與時間:</b></label>
+      <label for="time"><b>Pick a date and time | 請選擇日期與時間:</b></label><br>
       <input type="datetime-local" id="time" name="time">
     </p>
     <hr>
     <p>
-      <label for="stamp"><b>Timestamp | UNIX 時間:</b></label>
+      <label for="stamp"><b>Timestamp | UNIX 時間:</b></label><br>
       <input type="text" id="stamp"></input>
       <button onclick="copyStamp()">Copy | 複製</button>
     </p>
 
     <p>
-      <b>Local Time | 本地時間:</b>
+      <b>Local Time | 本地時間:</b><br>
       <span id="local-time"></span>
     </p>
     <p>
-      <b>UTC Time | UTC 協調世界時:</b>
+      <b>UTC Time | UTC 協調世界時:</b><br>
       <span id="utc-time"></span>
     </p>
  </body>
