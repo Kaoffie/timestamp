@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <title> Convert Timestamps </title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap');
+
+      html, body {
+        padding:1em;
+        margin:auto;
+        max-width:60em;
+        background:#252831;
+      }
+      body {
+        font-family: 'Noto Sans TC',sans-serif;
+        color: #FFF;
+        line-height: 1.4;
+        text-align: justify;
+      }
+    </style>
+    <script>
+      function copyStamp() {
+        var stampBox = document.getElementById("stamp");
+        stampBox.focus();
+        stampBox.select();
+        document.execCommand("Copy");
+      }
+    </script>
+  </head> 
+  <body>
+    <h1>Time Converter | 時間換算</h1>
+    <hr>
+    <p>
+      <label for="time"><b>Pick a date and time | 請選擇日期與時間:</b></label>
+      <input type="datetime-local" id="time" name="time">
+    </p>
+    <hr>
+    <p>
+      <label for="stamp"><b>Timestamp | UNIX 時間:</b></label>
+      <input type="text" id="stamp"></input>
+      <button onclick="copyStamp()">Copy | 複製</button>
+    </p>
+
+    <p>
+      <b>Local Time | 本地時間:</b>
+      <span id="local-time"></span>
+    </p>
+    <p>
+      <b>UTC Time | UTC 協調世界時:</b>
+      <span id="utc-time"></span>
+    </p>
+ </body>
+  <script>
+    document.getElementById("time").oninput = function() {
+      var localTimeStr = document.getElementById("time").value;
+      localTime = new Date(localTimeStr);
+
+      document.getElementById("stamp").value = localTime.getTime() / 1000;
+      document.getElementById("local-time").textContent = localTime.toString();
+      document.getElementById("utc-time").textContent = localTime.toUTCString();
+    }
+  </script>
+</html>
